@@ -1,0 +1,39 @@
+---
+title: "My Project"
+format: html
+editor: visual
+---
+
+## **Project Description**
+
+## Import
+
+```{r}
+library(readxl)
+library(here)
+
+raw_data <- read_xlsx(
+  here::here("data/raw/JMP_WASH_HH_2025_by_country-2.xlsx"),
+  sheet = "Water")
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
