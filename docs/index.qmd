@@ -1,39 +1,62 @@
 ---
-title: "My Project"
+title: "iamsilvia_capstone project"
 format: html
 editor: visual
 ---
 
 ## **Project Description**
 
-## Import
+## Load Packages
+
+```{r}
+library(tidyverse)
+```
+
+## Import Data
 
 ```{r}
 library(readxl)
 library(here)
 
-raw_data <- read_xlsx(
+raw_data_water <- read_xlsx(
   here::here("data/raw/JMP_WASH_HH_2025_by_country-2.xlsx"),
   sheet = "Water")
+
+raw_data_san <- read_xlsx(
+  here::here("data/raw/JMP_WASH_HH_2025_by_country-2.xlsx"),
+  sheet = "Sanitation")
+
+raw_data_hyg <- read_xlsx(
+  here::here("data/raw/JMP_WASH_HH_2025_by_country-2.xlsx"),
+  sheet = "Hygiene")
+
 ```
 
-## Quarto
+## Data Cleaning
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+#### Cleaning Water Dataset
 
 ```{r}
-1 + 1
+names(raw_data_water)
+
+var_labels_water <- raw_data_water[2, ]
+
+metadata_table_water <- tibble(
+  variable_name = names(raw_data_water),
+  variable_label = as.character(varname_long_water[1, ])
+)
+
+metadata_table_water$variable_label[1] <- "Country"
+
+clean_data_water <- raw_data_water[-c(1,2), ]
+
+#for (i in seq_along(metadata_table_water$variable_name)) {
+#  attr(clean_data_water[[ metadata_table_water$variable_name[i] ]],
+#      "label") <- metadata_table_water$varname_long_water[i]
+#}
+
+names(clean_data_water) <- metadata_table_water$variable_label
+
 ```
 
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
+## 
