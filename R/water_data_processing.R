@@ -76,7 +76,7 @@ processed_data_water <- data_water |>
          year, 
          starts_with("rural"),
          starts_with("urban")) |> 
-  filter(country_area_or_territory %in% c("Portugal", "Brazil"))
+  filter(country_area_or_territory %in% c("Portugal", "Brazil", "Mozambique"))
 
 # save processed data
 # Note that the folder `processed` has to be created before
