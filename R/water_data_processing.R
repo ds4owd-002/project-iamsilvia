@@ -42,9 +42,14 @@ n2 <- 6
 idx1 <- which(header_water_trans |> pull(V1) %in% values_to_repeat)
 idx2 <- which(header_water_trans |> pull(V2) %in% values_to_repeat)
 
+# Take the value in row i, column V1, and copy it into the next n1 rows in column V1_complete
 for(i in idx1) {
   header_water_trans[(i+1):(i+n1), "V1_complete"] <- header_water_trans[i, "V1"]
 }
+# As idx1 = c(5, 10, 15), the loop will run three times:
+# 1st time with i = 5
+# 2nd time with i = 10
+# 3rd time with i = 15
 
 for(j in idx2) {
   header_water_trans[(j+1):(j+n2), "V2_complete"] <- header_water_trans[j, "V2"]
@@ -73,10 +78,16 @@ data_water <- raw_data_water |>
 # here you can select the variables of interest and filter countries  
 processed_data_water <- data_water |> 
   select(country_area_or_territory,
-         year, 
+         iso3,
+         year,
+         sdg_region,
+         income_groupings,
+         population_thousands,
          starts_with("rural"),
          starts_with("urban")) |> 
-  filter(country_area_or_territory %in% c("Portugal", "Brazil", "Mozambique"))
+  filter(country_area_or_territory %in% c("Portugal", "Brazil", "Angola", "Cabo Verde", 
+                                          "Guinea-Bissau", "Equatorial Guinea", "Mozambique", 
+                                          "Sao Tome and Principe", "Timor-Leste"))
 
 # save processed data
 # Note that the folder `processed` has to be created before
