@@ -86,12 +86,11 @@ colnames(water_raw) <- column_names #replaces all column names in the dataset wa
 #colnames - set column names in water_raw dataset
 
 # clean the names of your dataset (remove spaces, manage duplicates)
-water_data <- water_raw |> 
-  clean_names(case = "snake")
+  
 
-
-#select the variables of interest and filter countries  
-water_data_processed <- water_data |> 
+#Transform dataset long on indicator
+water_data <- water_raw |>
+  clean_names(case = "snake") |> 
   select(country_area_or_territory,
          iso3,
          year,
@@ -100,14 +99,11 @@ water_data_processed <- water_data |>
          starts_with("urban"), 
          starts_with("total"),
          income_groupings, 
-         sdg_region)|> 
-  filter(country_area_or_territory %in% c("Portugal", "Brazil", "Angola", "Cabo Verde", 
-                                          "Guinea-Bissau", "Equatorial Guinea", "Mozambique", 
-                                          "Sao Tome and Principe", "Timor-Leste"))
+         sdg_region)
 
-#Transform dataset long on indicator
-water_data_long <- water_data_processed |>
-  rename( # 1) Rename some columns to clean/more conventional names
+water_data_long <- water_data |>   
+  # 1) Rename some columns to clean/more conventional names
+  rename( 
     country = country_area_or_territory,
     population = population_thousands,
     income_id = income_groupings
@@ -161,9 +157,6 @@ water_data_long <- water_data_processed |>
   relocate(income_id_short, .before = income_id) |> 
   relocate(sdg_region, .after = income_id)
 
-water_data_long |> 
-  count(country) #Equatorial Guinea (no data from 2018),
-#Timor-Leste (no data for 2000 and 2001)
 
 write_csv(water_data_long,
   file = here("data/processed/water_data_long.csv")
