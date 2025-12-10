@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Sílvia Paiva">
+<meta name="dcterms.date" content="2025-12-10">
 
 <title>Water inequalities across CPLP member states</title>
 <style>
@@ -69,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-6a8e6d95bfcd174082ff54166b04dcf7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-b4688d7b2c9ec82c644c56ae374cf451.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -89,7 +91,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sílvia Paiva </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 10, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -99,24 +113,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="project-description" class="level3">
-<h3 class="anchored" data-anchor-id="project-description"><strong>1. Project Description</strong></h3>
-<p>Global access to safe water is central to SDG 6.</p>
-<p>CPLP (Community of Portuguese-Speaking Countries) is a unique geopolitical group spanning Africa, South America, Asia, and Europe, with diverse socioeconomic realities.</p>
-<section id="research-questions" class="level4">
-<h4 class="anchored" data-anchor-id="research-questions"><strong>1.3 Research Questions</strong></h4>
-<p>i. How do CPLP countries evolved in access to drinking water over the past 25 years?</p>
-<p>ii. How do rural-urban inequalities vary across the CPLP?</p>
-<p>iii. How do improvement in water services correlate with improvements in sanitation and hygiene?</p>
-<p>iv. How do CPLP countries compare to their broader SDG regional averages?</p>
-<p>v. Where are the largest gaps, fastest improvements, and critical vulnerabilities?</p>
-<p><strong>Inequality and vulnerability profiles</strong></p>
-<p>What indicators drive the largest disparities?</p>
-<p>Which CPLP countries have the worst rural disadvantages? Which countries progressed fastest?</p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction"><strong>1. Introduction</strong></h3>
+<p>Although water covers most of the Earth’s surface, less than 1% is readily accessible freshwater for human use. Growing populations, environmental pressures, and uneven infrastructure have intensified global challenges in securing safe and reliable drinking water. In response, the United Nations established Sustainable Development Goal 6 (SDG 6) to ensure universal access to water and sanitation by 2030.</p>
+<p>Despite progress, large inequalities persist, particularly in low- and middle-income regions, where inadequate water services continue to affect health, wellbeing, and economic development. This project aims to analyse the evolution of access to drinking water in Portuguese-speaking countries (CPLP) over the past 25 years, comparing national trajectories and inequalities across residence types.</p>
+<section id="data-description" class="level4">
+<h4 class="anchored" data-anchor-id="data-description"><strong>Data Description</strong></h4>
+<p>This project uses the estimates of access to drinking water as part of the WASH dataset from the WHO/UNICEF Joint Monitoring Programme (JMP). The raw data include information for all countries from 2000 to 2024, covering variables such as country, SDG regions, income groups, population, and service-level indicators (e.g., at least basic, limited, unimproved, safely managed).</p>
+</section>
+<section id="project-goals" class="level4">
+<h4 class="anchored" data-anchor-id="project-goals">Project goals</h4>
+<p>My goal is to evaluate how access to drinking water has evolved in CPLP and to explore inequalities across rural and urban populations. A secondary aim is to compare CPLP country performance with broader SDG regional trends to contextualize progress.</p>
 </section>
 </section>
-<section id="load-packages" class="level3">
-<h3 class="anchored" data-anchor-id="load-packages">Load Packages</h3>
+<section id="data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="data-analysis">2. Data Analysis</h3>
+<section id="load-packages" class="level4">
+<h4 class="anchored" data-anchor-id="load-packages">Load Packages</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
@@ -138,8 +151,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="import-data" class="level2">
-<h2 class="anchored" data-anchor-id="import-data">Import Data</h2>
+<section id="import-data" class="level4">
+<h4 class="anchored" data-anchor-id="import-data">Import Data</h4>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 6480 Columns: 11
@@ -168,28 +181,44 @@ $ sdg_region      &lt;chr&gt; "Sub-Saharan Africa", "Sub-Saharan Africa", "Sub-S
 </div>
 </div>
 </section>
-<section id="data-cleaning" class="level2">
-<h2 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h2>
-<section id="cleaning-water-dataset" class="level4">
-<h4 class="anchored" data-anchor-id="cleaning-water-dataset">Cleaning Water Dataset</h4>
+<section id="data-cleaning" class="level4">
+<h4 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h4>
+</section>
+</section>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">3. Results</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>water_access <span class="ot">&lt;-</span> water <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(varname_short <span class="sc">==</span> <span class="st">"wat_bas"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>water_access <span class="sc">|&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(residence <span class="sc">==</span> <span class="st">"Total"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> percent, <span class="at">color =</span> country)) <span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> varname_long) <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Access to Drinking Water in CPLP Countries (Total Population)"</span>,</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percent of Population"</span>,</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Country"</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(varname_short <span class="sc">==</span> <span class="st">"wat_bas"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> <span class="fu">as.numeric</span>(percent),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">percent =</span> <span class="fu">if_else</span>(percent <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">|</span> percent <span class="sc">&gt;</span> <span class="dv">100</span>, <span class="cn">NA_real_</span>, percent))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: There was 1 warning in `mutate()`.
+ℹ In argument: `percent = as.numeric(percent)`.
+Caused by warning:
+! NAs introduced by coercion</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>water_access <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(residence <span class="sc">==</span> <span class="st">"Total"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> percent, <span class="at">color =</span> country)) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Set1"</span>) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Access to At Least Basic Drinking Water in CPLP Countries (Total Population)"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percentage of Population"</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Country"</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 30 rows containing missing values or values outside the scale range
+(`geom_line()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 30 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -199,9 +228,14 @@ $ sdg_region      &lt;chr&gt; "Sub-Saharan Africa", "Sub-Saharan Africa", "Sub-S
 </div>
 </div>
 </section>
-</section>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section"></h2>
+<section id="discussion-conclusions" class="level3">
+<h3 class="anchored" data-anchor-id="discussion-conclusions">3. Discussion &amp; Conclusions</h3>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">4. References</h3>
+</section>
 </section>
 
 </main>

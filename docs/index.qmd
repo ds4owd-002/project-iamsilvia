@@ -1,54 +1,50 @@
 ---
 title: "Water inequalities across CPLP member states"
-format: html
+author: Sílvia Paiva
+date: today
+format: 
+  html:
+    theme: cerulean
 editor: visual
 ---
 
-### **1. Project Description**
+### 1. Introduction
 
-Global access to safe water is central to SDG 6.
+Although water covers most of the Earth’s surface, less than 1% is readily accessible freshwater for human use. Growing populations, environmental pressures, and uneven infrastructure have intensified global challenges in securing safe and reliable drinking water. In response, the United Nations established Sustainable Development Goal 6 (SDG 6), which aims to ensure universal access to safe water and sanitation by 2030.
 
-CPLP (Community of Portuguese-Speaking Countries) is a unique geopolitical group spanning Africa, South America, Asia, and Europe, with diverse socioeconomic realities.
+Despite progress, large inequalities persist, particularly in low- and middle-income regions, where inadequate water services continue to affect health, well-being, and economic development. To better understand these disparities, this project analyses the evolution of access to drinking water in Portuguese-speaking countries (CPLP) over the past 25 years, comparing national trajectories and inequalities across residence types.
 
-#### **1.3 Research Questions**
+#### Data Description
 
-i\. How do CPLP countries evolved in access to drinking water over the past 25 years?
+This project uses drinking water access estimates from the WHO/UNICEF Joint Monitoring Programme (JMP). The raw dataset includes information for all countries from 2000 to 2024 and contains variables such as country identifiers, SDG region, income group, population, and service-level indicators (e.g., at least basic, limited, unimproved, safely managed). For this project, the data were cleaned, transformed into a long format, and restricted to the CPLP countries to enable consistent comparison across years and service levels.
 
-ii\. How do rural-urban inequalities vary across the CPLP?
+#### Project goals
 
-iii\. How do improvement in water services correlate with improvements in sanitation and hygiene?
+My main goal is to evaluate how access to drinking water has evolved in CPLP countries over the past 25 years and to quantify inequalities between rural and urban populations. A secondary goal is to compare CPLP performance with broader SDG regional trends to contextualize progress and identify areas where improvements are most needed.
 
-iv\. How do CPLP countries compare to their broader SDG regional averages?
+### 2. Data Analysis
 
-v\. Where are the largest gaps, fastest improvements, and critical vulnerabilities?
-
-**Inequality and vulnerability profiles**
-
-What indicators drive the largest disparities?
-
-Which CPLP countries have the worst rural disadvantages? Which countries progressed fastest?
-
-### Load Packages
+#### Load Packages
 
 ```{r}
+#| echo: false
 library(tidyverse)
 library(ggthemes)
 library(here)
 ```
 
-## Import Data
+#### Import Data
 
 ```{r}
 #| echo: false
 water <- read_csv(here::here("data/processed/water_data_long.csv"))
 
-# Inspect
 glimpse(water)
 ```
 
-## Data Cleaning
+#### Data Cleaning
 
-#### Cleaning Water Dataset
+### 3. Results
 
 ```{r}
 water_access <- water |>
@@ -72,3 +68,7 @@ water_access |>
 ```
 
 ## 
+
+### 3. Discussion & Conclusions
+
+### 4. References
