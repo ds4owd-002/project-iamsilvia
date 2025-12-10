@@ -1,8 +1,8 @@
 ################################################################################
 #
 # This script uses the JMP WASH data and transforms the jmp_wld_water data set 
-# from wide to long format, renames variables, and select columns (variables) 
-# and countries of interest to make it analysis-ready.
+# from wide to long format, renames variables, and selects variables and 
+# countries of interest to make it analysis-ready.
 #
 ################################################################################
 
