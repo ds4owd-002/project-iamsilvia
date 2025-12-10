@@ -22,7 +22,7 @@ This project uses drinking water access estimates from the WHO/UNICEF Joint Moni
 
 My main goal is to evaluate how access to drinking water has evolved in CPLP countries over the past 25 years and to quantify inequalities between rural and urban populations. A secondary goal is to compare CPLP performance with broader SDG regional trends to contextualize progress and identify areas where improvements are most needed.
 
-### 2. Data Analysis
+### 2. Results
 
 #### Load Packages
 
@@ -39,35 +39,42 @@ library(here)
 #| echo: false
 water <- read_csv(here::here("data/processed/water_data_long.csv"))
 
-glimpse(water)
+#select the variables of interest and filter CPLP countries  
+water_cplp <- water |> 
+  filter(country %in% c("Portugal", "Brazil", "Angola", "Cabo Verde", 
+                        "Guinea-Bissau", "Equatorial Guinea", "Mozambique", 
+                        "Sao Tome and Principe", "Timor-Leste"))
+
+
 ```
 
-#### Data Cleaning
-
-### 3. Results
+#### Exploratory Analysis
 
 ```{r}
-water_access <- water |>
-  filter(varname_short == "wat_bas") |> 
-  mutate(percent = as.numeric(percent),
-         percent = if_else(percent < 0 | percent > 100, NA_real_, percent))
+#| eval: false
 
-water_access |>
-  filter(residence == "Total") |>
-  ggplot(aes(x = year, y = percent, color = country)) +
-  geom_line(linewidth = 1) +
-  geom_point(size = 2) +
-  scale_y_continuous(limits = c(0, 100)) +
-  scale_color_brewer(palette = "Set1") +
-  labs(
-    title = "Access to At Least Basic Drinking Water in CPLP Countries (Total Population)",
-    x = "Year",
-    y = "Percentage of Population",
-    color = "Country"
-  )
+# check the differences in accessing available water when needed between rural and urban populations
+water_availability <- water |> 
+  filter(
+    year == 2020,
+    varname_short %in% c("wat_available", "wat_lim"),
+    residence != "Total") |> 
+  mutate(
+    percent = as.numeric(percent))
+  
+  ggplot(data = water_availability,
+         mapping = aes(x = residence, 
+                       y = percent, 
+                       fill = varname_long)) +
+  geom_col() +
+  facet_wrap(~country) +
+  scale_fill_colorblind()
+  geom_text(aes(label = round(percent, 1)),
+            position = position_stack(vjust = 0.5),
+            size = 3,
+            colour = "white")
+
 ```
-
-## 
 
 ### 3. Discussion & Conclusions
 
