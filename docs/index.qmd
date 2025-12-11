@@ -13,7 +13,6 @@ execute:
   echo: true
   warning: false
 editor: visual
-bibliography: references.bib
 ---
 
 # Introduction
