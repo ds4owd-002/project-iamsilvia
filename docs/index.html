@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sílvia Paiva">
-<meta name="dcterms.date" content="2025-12-11">
+<meta name="dcterms.date" content="2025-12-12">
 
 <title>Water inequalities across CPLP member states</title>
 <style>
@@ -57,7 +57,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
@@ -92,12 +112,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
-  <li><a href="#access-to-drinking-water-in-rural-and-urban-cplp-populations-2004-2024" id="toc-access-to-drinking-water-in-rural-and-urban-cplp-populations-2004-2024" class="nav-link" data-scroll-target="#access-to-drinking-water-in-rural-and-urban-cplp-populations-2004-2024">Access to Drinking Water in Rural and Urban CPLP Populations (2004-2024)</a></li>
-  <li><a href="#country-level-trajectories-in-access-to-drinking-water" id="toc-country-level-trajectories-in-access-to-drinking-water" class="nav-link" data-scroll-target="#country-level-trajectories-in-access-to-drinking-water">Country-level Trajectories in Access to Drinking Water</a></li>
-  <li><a href="#comparison-of-cplp-countries-with-their-sdg-regional-averages-2004-vs-2024" id="toc-comparison-of-cplp-countries-with-their-sdg-regional-averages-2004-vs-2024" class="nav-link" data-scroll-target="#comparison-of-cplp-countries-with-their-sdg-regional-averages-2004-vs-2024">Comparison of CPLP Countries With Their SDG Regional Averages (2004 vs 2024)</a></li>
+  <li><a href="#access-to-drinking-water-in-rural-and-urban-cplp-populations" id="toc-access-to-drinking-water-in-rural-and-urban-cplp-populations" class="nav-link" data-scroll-target="#access-to-drinking-water-in-rural-and-urban-cplp-populations">Access to drinking water in rural and urban CPLP Populations</a></li>
+  <li><a href="#country-level-trajectories-in-access-to-drinking-water-2004-2024" id="toc-country-level-trajectories-in-access-to-drinking-water-2004-2024" class="nav-link" data-scroll-target="#country-level-trajectories-in-access-to-drinking-water-2004-2024">Country-level trajectories in access to drinking water (2004-2024)</a></li>
+  <li><a href="#comparison-of-drinking-water-service-levels-in-cplp-relative-to-sdg-regional-averages-2004-vs-2024" id="toc-comparison-of-drinking-water-service-levels-in-cplp-relative-to-sdg-regional-averages-2004-vs-2024" class="nav-link" data-scroll-target="#comparison-of-drinking-water-service-levels-in-cplp-relative-to-sdg-regional-averages-2004-vs-2024">Comparison of drinking water service levels in CPLP relative to SDG regional averages (2004 vs 2024)</a></li>
   </ul></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
 </div>
@@ -122,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 11, 2025</p>
+      <p class="date">December 12, 2025</p>
     </div>
   </div>
   
@@ -136,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Although water covers most of the Earth’s surface, only a tiny fraction is available as accessible freshwater for human use. Ensuring safe and reliable drinking water has become a global priority as population growth, environmental pressures, and infrastructural inequalities intensify challenges to water security <span class="citation" data-cites="arora2022">[@arora2022]</span>. To track progress toward universal access, the WHO/UNICEF Joint Monitoring Programme (JMP) compiles global data estimates on drinking water services across countries and over time. This project uses these data to examine trends in drinking water access among Portuguese-speaking countries (CPLP) and to compare inequalities between rural and urban populations.</p>
+<p>Although water covers most of the Earth’s surface, only a tiny fraction is available as accessible freshwater for human use. Ensuring safe and reliable drinking water has become a global priority as population growth, environmental pressures, and infrastructural inequalities intensify challenges to water security <span class="citation" data-cites="arora2022a">(<a href="#ref-arora2022a" role="doc-biblioref">Arora and Mishra 2022</a>)</span>. To track progress toward universal access, the WHO/UNICEF Joint Monitoring Programme (JMP) compiles global data estimates on drinking water services across countries and over time. This project uses these data to examine trends in drinking water access among Portuguese-speaking countries (CPLP) and to compare inequalities between rural and urban populations.</p>
 </section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
@@ -146,12 +165,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"patchwork"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># load packages</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -174,9 +197,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<section id="access-to-drinking-water-in-rural-and-urban-cplp-populations-2004-2024" class="level3">
-<h3 class="anchored" data-anchor-id="access-to-drinking-water-in-rural-and-urban-cplp-populations-2004-2024">Access to Drinking Water in Rural and Urban CPLP Populations (2004-2024)</h3>
-<p>To evaluate progress in access to drinking water across CPLP countries, I first compared rural and urban populations in terms of access to “at least basic” and “limited” drinking water services in 2004 (@fig-1) and 2024 (@fig-2). These comparisons provide a baseline and endpoint view of inequalities and overall improvements over the 20-year period.</p>
+<section id="access-to-drinking-water-in-rural-and-urban-cplp-populations" class="level3">
+<h3 class="anchored" data-anchor-id="access-to-drinking-water-in-rural-and-urban-cplp-populations">Access to drinking water in rural and urban CPLP Populations</h3>
+<p><a href="#fig-water-access-2004" class="quarto-xref">Figure&nbsp;1</a> and <a href="#fig-water-access-2024" class="quarto-xref">Figure&nbsp;2</a> illustrate access to “at least basic” and “limited” drinking water services among rural and urban populations in CPLP countries in 2004 and 2024, respectively.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -195,19 +218,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">fill =</span> varname_long)) <span class="sc">+</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country) <span class="sc">+</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_calc</span>() <span class="sc">+</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_calc</span>(<span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(percent, <span class="dv">1</span>)),</span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">3</span>,</span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">colour =</span> <span class="st">"white"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-water-access-2004" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-1-1.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-water-access-2004-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-water-access-2004-1.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-water-access-2004-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Access to drinking water in CPLP in 2004
 </figcaption>
 </figure>
@@ -232,19 +255,19 @@ Figure&nbsp;1: Access to drinking water in CPLP in 2004
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">fill =</span> varname_long)) <span class="sc">+</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country) <span class="sc">+</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_calc</span>() <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_calc</span>(<span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(percent, <span class="dv">1</span>)),</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">3</span>,</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">colour =</span> <span class="st">"white"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-water-access-2024" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index_files/figure-html/fig-2-1.png" class="img-fluid figure-img" width="672">
+<div aria-describedby="fig-water-access-2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-water-access-2024-1.png" class="img-fluid figure-img" width="672">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-water-access-2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Access to drinking water in CPLP in 2024
 </figcaption>
 </figure>
@@ -252,15 +275,15 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 </div>
 </div>
 <ul>
-<li><p>All CPLP countries improved access to at least basic drinking water between 2004 and 2024, though the extent of progress varied considerably across countries.</p></li>
-<li><p>Access to at least basic drinking water remains substantially higher than reliance on limited services in both rural and urban populations.</p></li>
-<li><p>Rural–urban inequalities are most pronounced in Angola, Guinea-Bissau, and Mozambique, where rural populations continue to have the lowest levels of basic water access.</p></li>
-<li><p>Angola, Guinea-Bissau, Mozambique, São Tomé and Príncipe, and Timor-Leste show increased reliance on limited drinking water services in 2024, indicating uneven or incomplete progress despite gains in basic access.</p></li>
+<li><p>All CPLP countries experienced improvements in access to at least basic drinking water between 2004 and 2024</p></li>
+<li><p>Access to at least basic drinking water remains consistently higher than reliance on limited services in both rural and urban populations.</p></li>
+<li><p>Rural–urban disparities are most pronounced in Angola, Guinea-Bissau, and Mozambique, where rural populations continue to exhibit the lowest levels of access to basic drinking water.</p></li>
+<li><p>Angola, Guinea-Bissau, Mozambique, São Tomé and Príncipe, and Timor-Leste increased their reliance on limited drinking water services in 2024.</p></li>
 </ul>
 </section>
-<section id="country-level-trajectories-in-access-to-drinking-water" class="level3">
-<h3 class="anchored" data-anchor-id="country-level-trajectories-in-access-to-drinking-water">Country-level Trajectories in Access to Drinking Water</h3>
-<p>The dual-axis plots illustrate how Angola, Cabo Verde, Mozambique, and Timor-Lest service levels have changed over the past two decades.</p>
+<section id="country-level-trajectories-in-access-to-drinking-water-2004-2024" class="level3">
+<h3 class="anchored" data-anchor-id="country-level-trajectories-in-access-to-drinking-water-2004-2024">Country-level trajectories in access to drinking water (2004-2024)</h3>
+<p><a href="#fig-water-evol-2004-2024" class="quarto-xref">Figure&nbsp;3</a> presents country-level trajectories of access to drinking water services in Angola, Cabo Verde, Mozambique, and Timor-Leste between 2004 and 2024.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -279,79 +302,82 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> percent)</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># select country for analysis - write country of interest</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>country_to_plot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Angola"</span>, <span class="st">"Cabo Verde"</span>, <span class="st">"Mozambique"</span>, <span class="st">"Timor-Leste"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>countries_to_plot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Angola"</span>, <span class="st">"Cabo Verde"</span>, <span class="st">"Mozambique"</span>, <span class="st">"Timor-Leste"</span>)</span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (country_loop <span class="cf">in</span> country_to_plot) {</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    df_country <span class="ot">&lt;-</span> water_cplp_evol <span class="sc">|&gt;</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(country <span class="sc">==</span> country_loop)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute a scale factor to enable overlay with wat_lim on the same plot:</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>max_bas <span class="ot">&lt;-</span> <span class="fu">max</span>(df_country<span class="sc">$</span>wat_bas, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>max_lim <span class="ot">&lt;-</span> <span class="fu">max</span>(df_country<span class="sc">$</span>wat_lim, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>scale_factor <span class="ot">&lt;-</span> max_bas <span class="sc">/</span> max_lim</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># plot evolution for each selected country</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df_country,</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Left axis: wat_bas</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> wat_bas, <span class="at">colour =</span> <span class="st">"At least basic"</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> wat_bas, <span class="at">colour =</span> <span class="st">"At least basic"</span>), <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Right axis: wat_lim (rescaled)</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> wat_lim <span class="sc">*</span> scale_factor, <span class="at">colour =</span> <span class="st">"Limited"</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> wat_lim <span class="sc">*</span> scale_factor, <span class="at">colour =</span> <span class="st">"Limited"</span>),</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>            <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"At least basic"</span> <span class="ot">=</span> <span class="st">"steelblue"</span>, <span class="st">"Limited"</span> <span class="ot">=</span> <span class="st">"coral2"</span>),</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">name   =</span> <span class="st">"Service level"</span>) <span class="sc">+</span></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(country_loop),</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Year"</span>,</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Percentage (%)"</span>) <span class="sc">+</span> </span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"At least basic drinking water (%)"</span>,</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span> . <span class="sc">/</span> scale_factor, <span class="at">name =</span> <span class="st">"Limited drinking water (%)"</span>))</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot)   <span class="co"># VERY IMPORTANT to show the plot inside the loop</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>water_subset <span class="ot">&lt;-</span> water_cplp_evol <span class="sc">|&gt;</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">%in%</span> countries_to_plot)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>global_max_lim <span class="ot">&lt;-</span> <span class="fu">max</span>(water_subset<span class="sc">$</span>wat_lim, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>scale_factor   <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">/</span> global_max_lim   <span class="co"># maps wat_lim onto 0–100 scale</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">list</span>()  <span class="co"># empty list to store each country's plot</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(countries_to_plot)) {</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  country_loop <span class="ot">&lt;-</span> countries_to_plot[i]</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  df_country <span class="ot">&lt;-</span> water_subset <span class="sc">|&gt;</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(country <span class="sc">==</span> country_loop)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co"># plot evolution for each selected country</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df_country,</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> year)) <span class="sc">+</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Left axis: wat_bas</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> wat_bas, <span class="at">colour =</span> <span class="st">"At least basic"</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> wat_bas, <span class="at">colour =</span> <span class="st">"At least basic"</span>), <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Right axis: wat_lim (rescaled)</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">y =</span> wat_lim <span class="sc">*</span> scale_factor, <span class="at">colour =</span> <span class="st">"Limited"</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> wat_lim <span class="sc">*</span> scale_factor, <span class="at">colour =</span> <span class="st">"Limited"</span>),</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>            <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"At least basic"</span> <span class="ot">=</span> <span class="st">"steelblue"</span>, <span class="st">"Limited"</span> <span class="ot">=</span> <span class="st">"coral2"</span>),</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste</span>(country_loop),</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Percentage (%)"</span>) <span class="sc">+</span> </span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"At least basic drinking water (%)"</span>, </span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">sec.axis =</span> <span class="fu">sec_axis</span>(<span class="sc">~</span> . <span class="sc">/</span> scale_factor, </span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>                        <span class="at">name =</span> <span class="st">"Limited drinking water (%)"</span>)) <span class="sc">+</span> </span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="co"># store this plot in the list</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>plots[[i]] <span class="ot">&lt;-</span> plot}</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="co"># 2x2 grid with patchwork</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>(plots[[<span class="dv">1</span>]] <span class="sc">|</span> plots[[<span class="dv">2</span>]]) <span class="sc">/</span></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>(plots[[<span class="dv">3</span>]] <span class="sc">|</span> plots[[<span class="dv">4</span>]]) <span class="sc">+</span> </span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Country-level trajectories in access to drinking water (2004–2024)"</span>,</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">theme =</span> <span class="fu">theme</span>(</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div id="fig-water-evol-2004-2024" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-water-evol-2004-2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-water-evol-2004-2024-1.png" class="img-fluid figure-img" width="672">
 </div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-4.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-water-evol-2004-2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Access to drinking water in CPLP in 2024
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ul>
-<li>All CPLP countries show upward trends in access to at least basic drinking water</li>
+<li><p>Access to at least basic drinking water increased steadily over the two-decade period</p></li>
+<li><p>Improvements in basic access do not always coincide with reductions in reliance on limited services</p></li>
+<li><p>Cabo Verde and Timor-Leste show relatively high and sustained levels of basic water access by 2024</p></li>
+<li><p>Angola and Mozambique exhibit slower and more uneven progress</p></li>
 </ul>
 </section>
-<section id="comparison-of-cplp-countries-with-their-sdg-regional-averages-2004-vs-2024" class="level3">
-<h3 class="anchored" data-anchor-id="comparison-of-cplp-countries-with-their-sdg-regional-averages-2004-vs-2024">Comparison of CPLP Countries With Their SDG Regional Averages (2004 vs 2024)</h3>
-<p>I compared access to at least basic drinking water in each CPLP country with the corresponding SDG regional average for the years 2004 and 2024. These comparisons illustrate whether countries are performing above, below, or in line with broader regional trajectories.</p>
+<section id="comparison-of-drinking-water-service-levels-in-cplp-relative-to-sdg-regional-averages-2004-vs-2024" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-of-drinking-water-service-levels-in-cplp-relative-to-sdg-regional-averages-2004-vs-2024">Comparison of drinking water service levels in CPLP relative to SDG regional averages (2004 vs 2024)</h3>
+<p><a href="#tbl-region-2004" class="quarto-xref">Table&nbsp;1</a> and <a href="#tbl-region-2024" class="quarto-xref">Table&nbsp;2</a> compare access to “at least basic” drinking water in each CPLP country with the corresponding SDG regional average in 2004 and 2024. This comparison contextualises national performance within broader regional trends and highlights whether countries are performing above, below, or in line with their respective SDG region.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -369,82 +395,86 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sdg_region, year) <span class="sc">|&gt;</span></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">regional_mean =</span> <span class="fu">mean</span>(percent, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare access to drinking water in cplp to corresponding sdg_region</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>cplp_iso3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"PRT"</span>,<span class="st">"BRA"</span>,<span class="st">"AGO"</span>,<span class="st">"CPV"</span>,<span class="st">"GNB"</span>,<span class="st">"MOZ"</span>,<span class="st">"STP"</span>,<span class="st">"TLS"</span>)</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>water_cplp_vs_region <span class="ot">&lt;-</span> water <span class="sc">|&gt;</span></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    iso3 <span class="sc">%in%</span> cplp_iso3,</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    varname_short <span class="sc">==</span> <span class="st">"wat_bas"</span>,</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    residence <span class="sc">==</span> <span class="st">"Total"</span>,</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    year <span class="sc">&gt;=</span> <span class="dv">2004</span>,</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    year <span class="sc">&lt;=</span> <span class="dv">2024</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">na_if</span>(percent, <span class="st">"-"</span>),</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">parse_number</span>(percent)</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    water_region,</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"sdg_region"</span>, <span class="st">"year"</span>)   <span class="co"># join CPLP rows to their region-year means</span></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_from_region =</span> percent <span class="sc">-</span> regional_mean,   <span class="co"># positive = better than region</span></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">level_to_region =</span> <span class="fu">case_when</span>(</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>      diff_from_region <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Above regional average"</span>,</span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>      diff_from_region <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Below regional average"</span>,</span>
-<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span>                 <span class="sc">~</span> <span class="st">"At regional average"</span></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-region2004</span></span>
-<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Access to at least basic drinking water in CPLP countries vs regional averages in 2004.</span></span>
-<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>water_cplp_vs_region <span class="sc">|&gt;</span></span>
-<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2004</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, sdg_region, percent, regional_mean, level_to_region) <span class="sc">|&gt;</span> </span>
-<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">round</span>(percent, <span class="dv">1</span>),</span>
-<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">regional_mean =</span> <span class="fu">round</span>(regional_mean, <span class="dv">1</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"varname_short"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Access to at least basic drinking water in CPLP countries vs regional averages in 2004."</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">country       =</span> <span class="st">"Country"</span>,</span>
-<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">sdg_region    =</span> <span class="st">"SDG Region"</span>,</span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent       =</span> <span class="st">"Country (%)"</span>,</span>
-<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">regional_mean =</span> <span class="st">"Regional Mean (%)"</span>,</span>
-<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">level_to_region =</span> <span class="st">"Level to Region"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(percent, regional_mean),</span>
-<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>             <span class="at">decimals =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare access to drinking water in cplp to corresponding sdg_region</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>cplp_iso3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"PRT"</span>,<span class="st">"BRA"</span>,<span class="st">"AGO"</span>,<span class="st">"CPV"</span>,<span class="st">"GNB"</span>,<span class="st">"MOZ"</span>,<span class="st">"STP"</span>,<span class="st">"TLS"</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>water_cplp_vs_region <span class="ot">&lt;-</span> water <span class="sc">|&gt;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    iso3 <span class="sc">%in%</span> cplp_iso3,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    varname_short <span class="sc">==</span> <span class="st">"wat_bas"</span>,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    residence <span class="sc">==</span> <span class="st">"Total"</span>,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    year <span class="sc">&gt;=</span> <span class="dv">2004</span>,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    year <span class="sc">&lt;=</span> <span class="dv">2024</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">na_if</span>(percent, <span class="st">"-"</span>),</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">parse_number</span>(percent)) <span class="sc">|&gt;</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    water_region,</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"sdg_region"</span>, <span class="st">"year"</span>)) <span class="sc">|&gt;</span> <span class="co"># join CPLP rows to their region-year means</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff_from_region =</span> percent <span class="sc">-</span> regional_mean,   <span class="co"># positive = better than region</span></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">level_to_region =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>      diff_from_region <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Above regional average"</span>,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>      diff_from_region <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"Below regional average"</span>,</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span>                 <span class="sc">~</span> <span class="st">"At regional average"</span>))</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>water_cplp_vs_region <span class="sc">|&gt;</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2004</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, sdg_region, income_id, percent, regional_mean, level_to_region) <span class="sc">|&gt;</span> </span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">round</span>(percent, <span class="dv">1</span>),</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">regional_mean =</span> <span class="fu">round</span>(regional_mean, <span class="dv">1</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"varname_short"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">country       =</span> <span class="st">"Country"</span>,</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">sdg_region    =</span> <span class="st">"SDG Region"</span>,</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_id =</span> <span class="st">"Income Level"</span>,</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent       =</span> <span class="st">"Country (%)"</span>,</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">regional_mean =</span> <span class="st">"Regional Mean (%)"</span>,</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">level_to_region =</span> <span class="st">"Level to Region"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(percent, regional_mean),</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>             <span class="at">decimals =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="fu">px</span>(<span class="dv">11</span>),        </span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">12</span>),</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">column_labels.font.size =</span> <span class="fu">px</span>(<span class="dv">12</span>),</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">1</span>)         </span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div id="tbl-region-2004" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-region-2004-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regional averages in 2004.
+</figcaption>
+<div aria-describedby="tbl-region-2004-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="cdcuxtduhe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cdcuxtduhe table {
+<div id="wuzinbhnxa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wuzinbhnxa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cdcuxtduhe thead, #cdcuxtduhe tbody, #cdcuxtduhe tfoot, #cdcuxtduhe tr, #cdcuxtduhe td, #cdcuxtduhe th {
+#wuzinbhnxa thead, #wuzinbhnxa tbody, #wuzinbhnxa tfoot, #wuzinbhnxa tr, #wuzinbhnxa td, #wuzinbhnxa th {
   border-style: none;
 }
 
-#cdcuxtduhe p {
+#wuzinbhnxa p {
   margin: 0;
   padding: 0;
 }
 
-#cdcuxtduhe .gt_table {
+#wuzinbhnxa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
-  font-size: 16px;
+  font-size: 11px;
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
@@ -463,14 +493,14 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-left-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_caption {
+#wuzinbhnxa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cdcuxtduhe .gt_title {
+#wuzinbhnxa .gt_title {
   color: #333333;
-  font-size: 125%;
+  font-size: 12px;
   font-weight: initial;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -480,7 +510,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-bottom-width: 0;
 }
 
-#cdcuxtduhe .gt_subtitle {
+#wuzinbhnxa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -492,7 +522,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-top-width: 0;
 }
 
-#cdcuxtduhe .gt_heading {
+#wuzinbhnxa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -504,13 +534,13 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-right-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_bottom_border {
+#wuzinbhnxa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_col_headings {
+#wuzinbhnxa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -525,10 +555,10 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-right-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_col_heading {
+#wuzinbhnxa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 100%;
+  font-size: 12px;
   font-weight: normal;
   text-transform: inherit;
   border-left-style: none;
@@ -545,10 +575,10 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   overflow-x: hidden;
 }
 
-#cdcuxtduhe .gt_column_spanner_outer {
+#wuzinbhnxa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 100%;
+  font-size: 12px;
   font-weight: normal;
   text-transform: inherit;
   padding-top: 0;
@@ -557,15 +587,15 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   padding-right: 4px;
 }
 
-#cdcuxtduhe .gt_column_spanner_outer:first-child {
+#wuzinbhnxa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cdcuxtduhe .gt_column_spanner_outer:last-child {
+#wuzinbhnxa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cdcuxtduhe .gt_column_spanner {
+#wuzinbhnxa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -577,11 +607,11 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   width: 100%;
 }
 
-#cdcuxtduhe .gt_spanner_row {
+#wuzinbhnxa .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cdcuxtduhe .gt_group_heading {
+#wuzinbhnxa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -607,7 +637,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   text-align: left;
 }
 
-#cdcuxtduhe .gt_empty_group_heading {
+#wuzinbhnxa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -622,17 +652,17 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   vertical-align: middle;
 }
 
-#cdcuxtduhe .gt_from_md > :first-child {
+#wuzinbhnxa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cdcuxtduhe .gt_from_md > :last-child {
+#wuzinbhnxa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cdcuxtduhe .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
+#wuzinbhnxa .gt_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
@@ -649,7 +679,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   overflow-x: hidden;
 }
 
-#cdcuxtduhe .gt_stub {
+#wuzinbhnxa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -662,7 +692,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   padding-right: 5px;
 }
 
-#cdcuxtduhe .gt_stub_row_group {
+#wuzinbhnxa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -676,15 +706,15 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   vertical-align: top;
 }
 
-#cdcuxtduhe .gt_row_group_first td {
+#wuzinbhnxa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cdcuxtduhe .gt_row_group_first th {
+#wuzinbhnxa .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cdcuxtduhe .gt_summary_row {
+#wuzinbhnxa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -694,16 +724,16 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   padding-right: 5px;
 }
 
-#cdcuxtduhe .gt_first_summary_row {
+#wuzinbhnxa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_first_summary_row.thick {
+#wuzinbhnxa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cdcuxtduhe .gt_last_summary_row {
+#wuzinbhnxa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -713,7 +743,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-bottom-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_grand_summary_row {
+#wuzinbhnxa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -723,7 +753,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   padding-right: 5px;
 }
 
-#cdcuxtduhe .gt_first_grand_summary_row {
+#wuzinbhnxa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -733,7 +763,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-top-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_last_grand_summary_row_top {
+#wuzinbhnxa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -743,11 +773,11 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-bottom-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_striped {
+#wuzinbhnxa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cdcuxtduhe .gt_table_body {
+#wuzinbhnxa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -756,7 +786,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-bottom-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_footnotes {
+#wuzinbhnxa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -770,7 +800,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-right-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_footnote {
+#wuzinbhnxa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -779,7 +809,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   padding-right: 5px;
 }
 
-#cdcuxtduhe .gt_sourcenotes {
+#wuzinbhnxa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -793,7 +823,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   border-right-color: #D3D3D3;
 }
 
-#cdcuxtduhe .gt_sourcenote {
+#wuzinbhnxa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -801,84 +831,82 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
   padding-right: 5px;
 }
 
-#cdcuxtduhe .gt_left {
+#wuzinbhnxa .gt_left {
   text-align: left;
 }
 
-#cdcuxtduhe .gt_center {
+#wuzinbhnxa .gt_center {
   text-align: center;
 }
 
-#cdcuxtduhe .gt_right {
+#wuzinbhnxa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cdcuxtduhe .gt_font_normal {
+#wuzinbhnxa .gt_font_normal {
   font-weight: normal;
 }
 
-#cdcuxtduhe .gt_font_bold {
+#wuzinbhnxa .gt_font_bold {
   font-weight: bold;
 }
 
-#cdcuxtduhe .gt_font_italic {
+#wuzinbhnxa .gt_font_italic {
   font-style: italic;
 }
 
-#cdcuxtduhe .gt_super {
+#wuzinbhnxa .gt_super {
   font-size: 65%;
 }
 
-#cdcuxtduhe .gt_footnote_marks {
+#wuzinbhnxa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cdcuxtduhe .gt_asterisk {
+#wuzinbhnxa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cdcuxtduhe .gt_indent_1 {
+#wuzinbhnxa .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cdcuxtduhe .gt_indent_2 {
+#wuzinbhnxa .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cdcuxtduhe .gt_indent_3 {
+#wuzinbhnxa .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cdcuxtduhe .gt_indent_4 {
+#wuzinbhnxa .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cdcuxtduhe .gt_indent_5 {
+#wuzinbhnxa .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cdcuxtduhe .katex-display {
+#wuzinbhnxa .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cdcuxtduhe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wuzinbhnxa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
-<tr class="gt_heading header">
-<td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Access to at least basic drinking water in CPLP countries vs regional averages in 2004.</td>
-</tr>
-<tr class="gt_col_headings even">
+<tr class="gt_col_headings header">
 <th id="country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Country</th>
 <th id="sdg_region" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">SDG Region</th>
+<th id="income_id" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Income Level</th>
 <th id="percent" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Country (%)</th>
 <th id="regional_mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Regional Mean (%)</th>
 <th id="level_to_region" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Level to Region</th>
@@ -888,6 +916,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <tr class="odd">
 <td class="gt_row gt_left" headers="country">Angola</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Lower middle income</td>
 <td class="gt_row gt_right" headers="percent">42.0</td>
 <td class="gt_row gt_right" headers="regional_mean">59.7</td>
 <td class="gt_row gt_left" headers="level_to_region">Below regional average</td>
@@ -895,6 +924,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <tr class="even">
 <td class="gt_row gt_left" headers="country">Brazil</td>
 <td class="gt_row gt_left" headers="sdg_region">Latin America and the Caribbean</td>
+<td class="gt_row gt_left" headers="income_id">Upper middle income</td>
 <td class="gt_row gt_right" headers="percent">94.8</td>
 <td class="gt_row gt_right" headers="regional_mean">93.4</td>
 <td class="gt_row gt_left" headers="level_to_region">Above regional average</td>
@@ -902,6 +932,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <tr class="odd">
 <td class="gt_row gt_left" headers="country">Cabo Verde</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Lower middle income</td>
 <td class="gt_row gt_right" headers="percent">80.7</td>
 <td class="gt_row gt_right" headers="regional_mean">59.7</td>
 <td class="gt_row gt_left" headers="level_to_region">Above regional average</td>
@@ -909,6 +940,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <tr class="even">
 <td class="gt_row gt_left" headers="country">Guinea-Bissau</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Low income</td>
 <td class="gt_row gt_right" headers="percent">56.9</td>
 <td class="gt_row gt_right" headers="regional_mean">59.7</td>
 <td class="gt_row gt_left" headers="level_to_region">Below regional average</td>
@@ -916,6 +948,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <tr class="odd">
 <td class="gt_row gt_left" headers="country">Mozambique</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Low income</td>
 <td class="gt_row gt_right" headers="percent">28.9</td>
 <td class="gt_row gt_right" headers="regional_mean">59.7</td>
 <td class="gt_row gt_left" headers="level_to_region">Below regional average</td>
@@ -923,6 +956,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <tr class="even">
 <td class="gt_row gt_left" headers="country">Portugal</td>
 <td class="gt_row gt_left" headers="sdg_region">Europe and Northern America</td>
+<td class="gt_row gt_left" headers="income_id">High income</td>
 <td class="gt_row gt_right" headers="percent">99.0</td>
 <td class="gt_row gt_right" headers="regional_mean">97.7</td>
 <td class="gt_row gt_left" headers="level_to_region">Above regional average</td>
@@ -930,6 +964,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <tr class="odd">
 <td class="gt_row gt_left" headers="country">Sao Tome and Principe</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Lower middle income</td>
 <td class="gt_row gt_right" headers="percent">71.1</td>
 <td class="gt_row gt_right" headers="regional_mean">59.7</td>
 <td class="gt_row gt_left" headers="level_to_region">Above regional average</td>
@@ -937,6 +972,7 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 <tr class="even">
 <td class="gt_row gt_left" headers="country">Timor-Leste</td>
 <td class="gt_row gt_left" headers="sdg_region">Eastern and South-Eastern Asia</td>
+<td class="gt_row gt_left" headers="income_id">Lower middle income</td>
 <td class="gt_row gt_right" headers="percent">53.0</td>
 <td class="gt_row gt_right" headers="regional_mean">83.8</td>
 <td class="gt_row gt_left" headers="level_to_region">Below regional average</td>
@@ -947,58 +983,66 @@ Figure&nbsp;2: Access to drinking water in CPLP in 2024
 </div>
 </div>
 </div>
+</figure>
+</div>
+</div>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>water_cplp_vs_region <span class="sc">|&gt;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2024</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, sdg_region, percent, regional_mean, level_to_region) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, sdg_region, income_id, percent, regional_mean, level_to_region) <span class="sc">|&gt;</span> </span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="fu">round</span>(percent, <span class="dv">1</span>),</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">regional_mean =</span> <span class="fu">round</span>(regional_mean, <span class="dv">1</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"varname_short"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Access to at least basic drinking water in CPLP countries vs regional averages in 2024."</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">country       =</span> <span class="st">"Country"</span>,</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">sdg_region    =</span> <span class="st">"SDG Region"</span>,</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent       =</span> <span class="st">"Country (%)"</span>,</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">regional_mean =</span> <span class="st">"Regional Mean (%)"</span>,</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">level_to_region =</span> <span class="st">"Level to Region"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(percent, regional_mean),</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">decimals =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="st">"Country"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">sdg_region =</span> <span class="st">"SDG Region"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">income_id =</span> <span class="st">"Income Level"</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">percent =</span> <span class="st">"Country (%)"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">regional_mean =</span> <span class="st">"Regional Mean (%)"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">level_to_region =</span> <span class="st">"Level to Region"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(percent, regional_mean),</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">decimals =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">table.font.size =</span> <span class="fu">px</span>(<span class="dv">11</span>),        </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">heading.title.font.size =</span> <span class="fu">px</span>(<span class="dv">12</span>),</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">column_labels.font.size =</span> <span class="fu">px</span>(<span class="dv">12</span>),</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">1</span>)         </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div id="tbl-region2024" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-region-2024" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-region2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regional averages in 2024.
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-region-2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Access to at least basic drinking water in CPLP countries vs regional averages in 2024.
 </figcaption>
-<div aria-describedby="tbl-region2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-region-2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="sngugeuxzo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sngugeuxzo table {
+<div id="mkwizjubma" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mkwizjubma table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sngugeuxzo thead, #sngugeuxzo tbody, #sngugeuxzo tfoot, #sngugeuxzo tr, #sngugeuxzo td, #sngugeuxzo th {
+#mkwizjubma thead, #mkwizjubma tbody, #mkwizjubma tfoot, #mkwizjubma tr, #mkwizjubma td, #mkwizjubma th {
   border-style: none;
 }
 
-#sngugeuxzo p {
+#mkwizjubma p {
   margin: 0;
   padding: 0;
 }
 
-#sngugeuxzo .gt_table {
+#mkwizjubma .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
-  font-size: 16px;
+  font-size: 11px;
   font-weight: normal;
   font-style: normal;
   background-color: #FFFFFF;
@@ -1017,14 +1061,14 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-left-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_caption {
+#mkwizjubma .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sngugeuxzo .gt_title {
+#mkwizjubma .gt_title {
   color: #333333;
-  font-size: 125%;
+  font-size: 12px;
   font-weight: initial;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1034,7 +1078,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-bottom-width: 0;
 }
 
-#sngugeuxzo .gt_subtitle {
+#mkwizjubma .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1046,7 +1090,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-top-width: 0;
 }
 
-#sngugeuxzo .gt_heading {
+#mkwizjubma .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1058,13 +1102,13 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-right-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_bottom_border {
+#mkwizjubma .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_col_headings {
+#mkwizjubma .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1079,10 +1123,10 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-right-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_col_heading {
+#mkwizjubma .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 100%;
+  font-size: 12px;
   font-weight: normal;
   text-transform: inherit;
   border-left-style: none;
@@ -1099,10 +1143,10 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   overflow-x: hidden;
 }
 
-#sngugeuxzo .gt_column_spanner_outer {
+#mkwizjubma .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
-  font-size: 100%;
+  font-size: 12px;
   font-weight: normal;
   text-transform: inherit;
   padding-top: 0;
@@ -1111,15 +1155,15 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   padding-right: 4px;
 }
 
-#sngugeuxzo .gt_column_spanner_outer:first-child {
+#mkwizjubma .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sngugeuxzo .gt_column_spanner_outer:last-child {
+#mkwizjubma .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sngugeuxzo .gt_column_spanner {
+#mkwizjubma .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1131,11 +1175,11 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   width: 100%;
 }
 
-#sngugeuxzo .gt_spanner_row {
+#mkwizjubma .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sngugeuxzo .gt_group_heading {
+#mkwizjubma .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1161,7 +1205,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   text-align: left;
 }
 
-#sngugeuxzo .gt_empty_group_heading {
+#mkwizjubma .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1176,17 +1220,17 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   vertical-align: middle;
 }
 
-#sngugeuxzo .gt_from_md > :first-child {
+#mkwizjubma .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sngugeuxzo .gt_from_md > :last-child {
+#mkwizjubma .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sngugeuxzo .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
+#mkwizjubma .gt_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
@@ -1203,7 +1247,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   overflow-x: hidden;
 }
 
-#sngugeuxzo .gt_stub {
+#mkwizjubma .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1216,7 +1260,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   padding-right: 5px;
 }
 
-#sngugeuxzo .gt_stub_row_group {
+#mkwizjubma .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1230,15 +1274,15 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   vertical-align: top;
 }
 
-#sngugeuxzo .gt_row_group_first td {
+#mkwizjubma .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sngugeuxzo .gt_row_group_first th {
+#mkwizjubma .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sngugeuxzo .gt_summary_row {
+#mkwizjubma .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1248,16 +1292,16 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   padding-right: 5px;
 }
 
-#sngugeuxzo .gt_first_summary_row {
+#mkwizjubma .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_first_summary_row.thick {
+#mkwizjubma .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sngugeuxzo .gt_last_summary_row {
+#mkwizjubma .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1267,7 +1311,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-bottom-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_grand_summary_row {
+#mkwizjubma .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1277,7 +1321,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   padding-right: 5px;
 }
 
-#sngugeuxzo .gt_first_grand_summary_row {
+#mkwizjubma .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1287,7 +1331,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-top-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_last_grand_summary_row_top {
+#mkwizjubma .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1297,11 +1341,11 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-bottom-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_striped {
+#mkwizjubma .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sngugeuxzo .gt_table_body {
+#mkwizjubma .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1310,7 +1354,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-bottom-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_footnotes {
+#mkwizjubma .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1324,7 +1368,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-right-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_footnote {
+#mkwizjubma .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1333,7 +1377,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   padding-right: 5px;
 }
 
-#sngugeuxzo .gt_sourcenotes {
+#mkwizjubma .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1347,7 +1391,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   border-right-color: #D3D3D3;
 }
 
-#sngugeuxzo .gt_sourcenote {
+#mkwizjubma .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1355,84 +1399,82 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
   padding-right: 5px;
 }
 
-#sngugeuxzo .gt_left {
+#mkwizjubma .gt_left {
   text-align: left;
 }
 
-#sngugeuxzo .gt_center {
+#mkwizjubma .gt_center {
   text-align: center;
 }
 
-#sngugeuxzo .gt_right {
+#mkwizjubma .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sngugeuxzo .gt_font_normal {
+#mkwizjubma .gt_font_normal {
   font-weight: normal;
 }
 
-#sngugeuxzo .gt_font_bold {
+#mkwizjubma .gt_font_bold {
   font-weight: bold;
 }
 
-#sngugeuxzo .gt_font_italic {
+#mkwizjubma .gt_font_italic {
   font-style: italic;
 }
 
-#sngugeuxzo .gt_super {
+#mkwizjubma .gt_super {
   font-size: 65%;
 }
 
-#sngugeuxzo .gt_footnote_marks {
+#mkwizjubma .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sngugeuxzo .gt_asterisk {
+#mkwizjubma .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sngugeuxzo .gt_indent_1 {
+#mkwizjubma .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sngugeuxzo .gt_indent_2 {
+#mkwizjubma .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sngugeuxzo .gt_indent_3 {
+#mkwizjubma .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sngugeuxzo .gt_indent_4 {
+#mkwizjubma .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sngugeuxzo .gt_indent_5 {
+#mkwizjubma .gt_indent_5 {
   text-indent: 25px;
 }
 
-#sngugeuxzo .katex-display {
+#mkwizjubma .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#sngugeuxzo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mkwizjubma div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
 <table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
-<tr class="gt_heading header">
-<td colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Access to at least basic drinking water in CPLP countries vs regional averages in 2024.</td>
-</tr>
-<tr class="gt_col_headings even">
+<tr class="gt_col_headings header">
 <th id="country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Country</th>
 <th id="sdg_region" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">SDG Region</th>
+<th id="income_id" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Income Level</th>
 <th id="percent" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Country (%)</th>
 <th id="regional_mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Regional Mean (%)</th>
 <th id="level_to_region" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Level to Region</th>
@@ -1442,6 +1484,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
 <tr class="odd">
 <td class="gt_row gt_left" headers="country">Angola</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Lower middle income</td>
 <td class="gt_row gt_right" headers="percent">68.0</td>
 <td class="gt_row gt_right" headers="regional_mean">73.4</td>
 <td class="gt_row gt_left" headers="level_to_region">Below regional average</td>
@@ -1449,6 +1492,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
 <tr class="even">
 <td class="gt_row gt_left" headers="country">Brazil</td>
 <td class="gt_row gt_left" headers="sdg_region">Latin America and the Caribbean</td>
+<td class="gt_row gt_left" headers="income_id">Upper middle income</td>
 <td class="gt_row gt_right" headers="percent">99.0</td>
 <td class="gt_row gt_right" headers="regional_mean">96.3</td>
 <td class="gt_row gt_left" headers="level_to_region">Above regional average</td>
@@ -1456,6 +1500,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
 <tr class="odd">
 <td class="gt_row gt_left" headers="country">Cabo Verde</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Lower middle income</td>
 <td class="gt_row gt_right" headers="percent">92.3</td>
 <td class="gt_row gt_right" headers="regional_mean">73.4</td>
 <td class="gt_row gt_left" headers="level_to_region">Above regional average</td>
@@ -1463,6 +1508,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
 <tr class="even">
 <td class="gt_row gt_left" headers="country">Guinea-Bissau</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Low income</td>
 <td class="gt_row gt_right" headers="percent">61.8</td>
 <td class="gt_row gt_right" headers="regional_mean">73.4</td>
 <td class="gt_row gt_left" headers="level_to_region">Below regional average</td>
@@ -1470,6 +1516,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
 <tr class="odd">
 <td class="gt_row gt_left" headers="country">Mozambique</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Low income</td>
 <td class="gt_row gt_right" headers="percent">66.6</td>
 <td class="gt_row gt_right" headers="regional_mean">73.4</td>
 <td class="gt_row gt_left" headers="level_to_region">Below regional average</td>
@@ -1477,6 +1524,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
 <tr class="even">
 <td class="gt_row gt_left" headers="country">Portugal</td>
 <td class="gt_row gt_left" headers="sdg_region">Europe and Northern America</td>
+<td class="gt_row gt_left" headers="income_id">High income</td>
 <td class="gt_row gt_right" headers="percent">99.0</td>
 <td class="gt_row gt_right" headers="regional_mean">98.3</td>
 <td class="gt_row gt_left" headers="level_to_region">Above regional average</td>
@@ -1484,6 +1532,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
 <tr class="odd">
 <td class="gt_row gt_left" headers="country">Sao Tome and Principe</td>
 <td class="gt_row gt_left" headers="sdg_region">Sub-Saharan Africa</td>
+<td class="gt_row gt_left" headers="income_id">Lower middle income</td>
 <td class="gt_row gt_right" headers="percent">78.0</td>
 <td class="gt_row gt_right" headers="regional_mean">73.4</td>
 <td class="gt_row gt_left" headers="level_to_region">Above regional average</td>
@@ -1491,6 +1540,7 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
 <tr class="even">
 <td class="gt_row gt_left" headers="country">Timor-Leste</td>
 <td class="gt_row gt_left" headers="sdg_region">Eastern and South-Eastern Asia</td>
+<td class="gt_row gt_left" headers="income_id">Lower middle income</td>
 <td class="gt_row gt_right" headers="percent">87.3</td>
 <td class="gt_row gt_right" headers="regional_mean">94.6</td>
 <td class="gt_row gt_left" headers="level_to_region">Below regional average</td>
@@ -1505,26 +1555,31 @@ Table&nbsp;1: Access to at least basic drinking water in CPLP countries vs regio
 </div>
 </div>
 <ul>
-<li>The relative position of most CPLP countries remains stable between 2004 and 2024</li>
+<li>Although all CPLP countries improved access to drinking water over time, several did not converge toward regional averages by 2024</li>
+<li>CPLP countries located in Sub-Saharan Africa, specifically Angola, Guine-Bissau, and Mozambique, remain below their regional average for access to at least basic drinking water</li>
+<li>Brazil, Cabo Verde, Portugal, and São Tomé and Príncipe perform above their respective SDG regional averages in both 2004 and 2024</li>
 </ul>
 </section>
 </section>
 <section id="conclusions" class="level1">
 <h1>Conclusions</h1>
-<p>In 2024:</p>
+<p>In summary:</p>
 <ul>
-<li><p>Both rural and urban populations have higher access to at least basic drinking water than limited drinking water</p></li>
-<li><p>Urban populations have greater access to drinking water</p></li>
-<li><p>Angola, Guine-Bissau, and Mozambique have the highest disparity between rural and urban access to drinking water</p></li>
-<li><p>The access is lowest in rural populations in Angola</p></li>
-<li><p>São Tomé e Príncipe has the highest % population with limited drinking water</p></li>
+<li><p>Access to drinking water has improved across all CPLP countries between 2004 and 2024, particularly for at least basic services; however, progress remains uneven, with persistent rural–urban gaps and heterogeneous country-level trajectories indicating ongoing challenges in extending services equitably;</p></li>
+<li><p>The continued reliance on limited drinking water services in multiple countries, despite gains in basic access, highlights structural constraints in transitioning along the drinking water service ladder;</p></li>
+<li><p>CPLP countries with low and lower-middle-income remain behind their SDG regional averages, suggesting that economic capacity play a critical role in shaping water service expansion and convergence toward SDG 6 targets <span class="citation" data-cites="valero2023a">Arora and Mishra (<a href="#ref-arora2022a" role="doc-biblioref">2022</a>)</span>.</p></li>
 </ul>
-</section>
-<section id="references" class="level1">
-<h1>References</h1>
+
 </section>
 
-</main>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-arora2022a" class="csl-entry" role="listitem">
+Arora, Naveen Kumar, and Isha Mishra. 2022. <span>“Sustainable Development Goal 6: Global Water Security.”</span> <em>Environmental Sustainability</em> 5 (3): 271–75. <a href="https://doi.org/10.1007/s42398-022-00246-5">https://doi.org/10.1007/s42398-022-00246-5</a>.
+</div>
+<div id="ref-valero2023a" class="csl-entry" role="listitem">
+Valero, Diana, Jess Cook, Angus Lee, Alison L. Browne, Rowan Ellis, Vidya Sagar Pancholi, and Claire Hoolohan. 2023. <span>“Addressing Water Poverty Under Climate Crisis: Implications for Social Policy.”</span> <em>Social Policy and Society</em> 22 (4): 747–62. <a href="https://doi.org/10.1017/s1474746423000258">https://doi.org/10.1017/s1474746423000258</a>.
+</div>
+</div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
