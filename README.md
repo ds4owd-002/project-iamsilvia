@@ -1,20 +1,22 @@
-CPLP Drinking Water Access Analysis (2000–2024)
+Data Science for OpenWASH
 
-Capstone Project – WASH Data Analytics
+Capstone Project – Water inequalities across CPLP member states 
 
-Overview
+Project Overview
 
-This project analyses the evolution of access to drinking water in Portuguese-speaking countries (CPLP) over the past 25 years, using global WASH estimates from the WHO/UNICEF Joint Monitoring Programme (JMP). 
-The goal is to evaluate national progress toward Sustainable Development Goal 6 (SDG 6) and understand inequalities across rural and urban populations.
+This project examines long-term trends and inequalities in access to drinking water across Portuguese-speaking countries (CPLP) between 2004 and 2024. The analysis explores differences between rural and urban populations, country-level trajectories over time, and national performance relative to Sustainable Development Goal (SDG) regional averages.
 
-The project includes data cleaning, transformation, exploratory analysis, and visualisation using the tidyverse. 
-The processed dataset is reshaped into a long, analysis-ready format for reproducible research.
+Data source
 
+The analysis is based on drinking water access estimates from the WHO/UNICEF Joint Monitoring Programme (JMP), which provides globally comparable WASH indicators used for monitoring progress toward SDG 6. The raw dataset includes country-level information on service levels (e.g., at least basic, limited, unimproved), population, income groupings, and SDG regions.
 
-Data Source
+Data processing and wrangling
 
-This project uses publicly available estimates from the:
+Raw JMP data were cleaned and reshaped using the tidyverse in R. Key processing steps included:
+- Standardising and cleaning variable names and labels
+- Converting the dataset to a long, analysis-ready format
+- Filtering the data to CPLP countries and selected years
+- Harmonising service-level indicators and residence categories (rural, urban, total)
 
-WHO/UNICEF Joint Monitoring Programme (JMP)
-Water Supply, Sanitation and Hygiene (WASH) dataset – 2025 update
+The processed datasets are saved as CSV files to ensure reproducibility and ease of reuse.
 
