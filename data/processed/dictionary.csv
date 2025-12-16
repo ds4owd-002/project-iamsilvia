@@ -1,0 +1,26 @@
+﻿Variable name;Description
+country;Official country name as reported by the WHO/UNICEF Joint Monitoring Programme (JMP)
+iso3;Three-letter ISO 3166-1 alpha-3 country code, used for standardized country identification
+year;Calendar year of the estimate
+population;Total population of the country in the given year (in thousands)
+residence;Population residence type
+varname_short;Short code identifying the drinking water service level indicator
+varname_long;Descriptive name of the drinking water service level
+percent;Percentage of the population (by country, year, and residence type) with access to the specified drinking water service level
+income_id_short;Abbreviated World Bank income classification
+income_id;World Bank income group classification
+sdg_region;SDG regional grouping used by the United Nations
+;
+;
+Drinking water service level codes (varname_short);
+Code;Description
+wat_bas;At least basic drinking water services (improved source within a 30-minute round trip)
+wat_lim;Limited drinking water services (improved source requiring more than 30 minutes round trip)
+wat_unimp;Unimproved drinking water sources
+wat_suf;Surface water use (e.g., rivers, lakes, ponds)
+wat_safe;Safely managed drinking water services (basic service plus accessibility, availability, and quality criteria)
+wat_accessible;Drinking water accessible on premises
+wat_available;Drinking water available when needed
+wat_free;Drinking water free from contamination
+wat_piped;Piped drinking water supply
+wat_nonpiped;Non-piped improved drinking water sources
