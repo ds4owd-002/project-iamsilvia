@@ -114,7 +114,7 @@ water_cplp_access_2024 <- water_cplp |>
             colour = "white")
 ```
 
--   All CPLP countries experienced improvements in access to at least basic drinking water between 2004 and 2024
+-   All CPLP countries experienced improvements in access to at least basic drinking water between 2004 and 2024.
 
 -   Access to at least basic drinking water remains consistently higher than reliance on limited services in both rural and urban populations.
 
@@ -201,13 +201,13 @@ plots[[i]] <- plot}
 
 ```
 
--   Access to at least basic drinking water increased steadily over the two-decade period
+-   Access to at least basic drinking water increased steadily over the two-decade period.
 
--   Improvements in basic access do not always coincide with reductions in reliance on limited services
+-   Improvements in basic access do not always coincide with reductions in reliance on limited services.
 
--   Cabo Verde and Timor-Leste show relatively high and sustained levels of basic water access by 2024
+-   Cabo Verde and Timor-Leste show relatively high and sustained levels of basic water access by 2024.
 
--   Angola and Mozambique exhibit slower and more uneven progress
+-   Angola and Mozambique exhibit slower and more uneven progress.
 
 ### Comparison of drinking water service levels in CPLP relative to SDG regional averages (2004 vs 2024)
 
@@ -312,9 +312,11 @@ water_cplp_vs_region |>
   
 ```
 
--   Although all CPLP countries improved access to drinking water over time, several did not converge toward regional averages by 2024
--   CPLP countries located in Sub-Saharan Africa, specifically Angola, Guine-Bissau, and Mozambique, remain below their regional average for access to at least basic drinking water
--   Brazil, Cabo Verde, Portugal, and São Tomé and Príncipe perform above their respective SDG regional averages in both 2004 and 2024
+-   Although all CPLP countries improved access to drinking water over time, several did not converge toward regional averages by 2024.
+
+-   CPLP countries located in Sub-Saharan Africa, specifically Angola, Guine-Bissau, and Mozambique, remain below their regional average for access to at least basic drinking water.
+
+-   Brazil, Cabo Verde, Portugal, and São Tomé and Príncipe perform above their respective SDG regional averages in both 2004 and 2024.
 
 # Conclusions
 
@@ -324,4 +326,8 @@ In summary:
 
 -   The continued reliance on limited drinking water services in multiple countries, despite gains in basic access, highlights structural constraints in transitioning along the drinking water service ladder;
 
--   CPLP countries with low and lower-middle-income remain behind their SDG regional averages, suggesting that economic capacity play a critical role in shaping water service expansion and convergence toward SDG 6 targets [@valero2023a,@arora2022a].
+-   CPLP countries with low and lower-middle-income remain behind their SDG regional averages, suggesting that economic capacity play a critical role in shaping water service expansion and convergence toward SDG 6 targets [@valero2023; @arora2022a].
+
+# Disclaimer
+
+GenAI ChatGPT was used to assist with code debugging and language refinement. All data analysis, interpretation, and conclusions are the author’s own.
